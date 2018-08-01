@@ -21,4 +21,7 @@ MAIL_USERNAME = None
 MAIL_PASSWORD = None
 
 # administrator list
-ADMINS = ['394320736@qq.com']
+ADMINS = ['email@qq.com']
+
+# pagination
+POSTS_PER_PAGE = 1

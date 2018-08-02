@@ -15,13 +15,14 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
 # mail server settings
-MAIL_SERVER = 'localhost'
+# email server
+MAIL_SERVER = 'smtp.qq.com'
 MAIL_PORT = 25
-MAIL_USERNAME = None
-MAIL_PASSWORD = None
+MAIL_USERNAME = '×××@qq.com' #sender
+MAIL_PASSWORD = '***' #授权码
 
 # administrator list
-ADMINS = ['email@qq.com']
+ADMINS = ['942402379@qq.com'] #resp
 
 # pagination
 POSTS_PER_PAGE = 1

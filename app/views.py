@@ -6,6 +6,7 @@ from .forms import LoginForm,EditForm,PostForm
 from .models import User,Post
 from datetime import datetime
 from config import POSTS_PER_PAGE
+from emails import follower_notification
 
 
 @app.route('/',methods=['GET','POST'])
@@ -152,6 +153,9 @@ def follow(nickname):
     db.session.add(u)
     db.session.commit()
     flash('You are now following ' + nickname + '!')
+
+    #异步调用邮件
+    follower_notification(user,g.user)
     return redirect(url_for('user', nickname=nickname))
 
 @app.route('/unfollow/<nickname>')
